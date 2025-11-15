@@ -1,42 +1,35 @@
-# New-Website
+# ✨ New-Website
 
-This template should help get you started developing with Vue 3 in Vite.
+该仓库用来重构个人网站，目前处于学习阶段 <br />
+本网站的计划技术栈为 `Vue3` + `Pinia` + `TailwindCSS` + `VitePress` <br />
+尝试使用 `TypeScript` （相当于 `JavaScript` 的超集）
 
-## Recommended IDE Setup
+## ⚙️ 项目部署说明
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### 1.安装相应 node 依赖
 
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+请确保电脑已安装 NodeJS（推荐 LTS 版本）<br />
+当然，用 NVM 来管理 NodeJS 版本也是个不错的选择
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 2.运行项目
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### 3.停止项目运行
 
-```sh
-npm run build
-```
+在终端里使用 `Ctrl + C`
+
+## 🛠️ 更新说明（2025-11-15）
+
+创建仓库，开始学习并使用 `Vue3`
+
+## ✍️ 写在最后
+
+> 不必问世界需要什么，问问自己，什么事让你变得生机勃勃，充满活力，然后就大胆去做。<br />
+> --霍华德·瑟曼
