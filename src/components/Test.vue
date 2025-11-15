@@ -1,47 +1,33 @@
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
-export default {
-    setup() {
-        // 定义变量
-        let name = ref("xmtx");
-        let age = ref(20);
-        let profession = "student";
 
-        // 定义方法
-        function changeName() {
-            name.value = "xmtx Su";
-        }
+// 定义变量
+let name = ref("xmtx");
+let age = ref(20);
+let profession = "student";
 
-        function changeAge() {
-            age.value = 21;
-        }
+// 定义方法
+function changeName() {
+    name.value = "xmtx Su";
+}
 
-        function showProfession() {
-            alert(profession);
-        }
+function changeAge() {
+    age.value += 1;
+}
 
-
-        // 返回数据
-        return {
-            name,
-            age,
-            profession,
-            changeName,
-            changeAge,
-            showProfession
-        };
-    }
+function showProfession() {
+    alert(profession);
 }
 </script>
 
 <template>
     <div class="xmtx">
-        <h1>xmtx的个人信息</h1>
+        <h1>xmtx的个人信息 - 变量版</h1>
         <p>姓名: {{ name }}</p>
         <p>年龄: {{ age }}</p>
         <p>职业: {{ profession }}</p>
         <button @click="changeName" class="btn">切换姓名</button>
-        <button @click="changeAge" class="btn">切换年龄</button>
+        <button @click="changeAge" class="btn">年龄加1</button>
         <button @click="showProfession" class="btn">显示职业</button>
     </div>
 </template>
@@ -57,6 +43,7 @@ export default {
     color: #001643;
     border-radius: 1rem;
     padding: 1rem;
+    margin: 1rem;
 }
 
 .btn {
