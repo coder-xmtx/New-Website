@@ -3,7 +3,7 @@ import { ref } from 'vue';
 
 // 定义变量
 let name = ref("xmtx");
-let age = ref(20);
+const age = ref(20);
 let profession = "student";
 
 // 定义方法
@@ -12,7 +12,7 @@ function changeName() {
 }
 
 function changeAge() {
-    age.value += 1;
+    age.value++;
 }
 
 function showProfession() {
@@ -33,11 +33,6 @@ function showProfession() {
 </template>
 
 <style scoped>
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .xmtx {
     background-color: #cbdcff;
     color: #001643;
