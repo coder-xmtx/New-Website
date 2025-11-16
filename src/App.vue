@@ -8,9 +8,4 @@ import Ref from "./components/Ref.vue";
   <Ref />
 </template>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
-</style>
+<style></style>

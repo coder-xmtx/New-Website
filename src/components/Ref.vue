@@ -19,48 +19,23 @@ let { name, age, profession } = toRefs(obj.value); // 解构obj.value;
 
 function changeAge() {
     age.value++;
-    console.log(1);
 }
 
 </script>
 
 <template>
-    <div class="xmtx">
-        <h1>xmtx的个人信息 - 对象版</h1>
+    <div class="flex flex-col bg-base-100 text-base-content m-2 p-2 rounded-box">
+        <h1 class="text-2xl font-bold">xmtx的个人信息 - 对象版</h1>
         <p>姓名: {{ name }}</p>
         <p>年龄: {{ age }}</p>
         <p>职业: {{ profession }}</p>
-        <button @click="changeAge" class="btn">年龄加1</button>
         <p v-for="game in games" :key="game.name">游戏: {{ game.name }} - {{ game.price }}元</p>
+        <div class="flex gap-2">
+            <button @click="changeAge"
+                class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                年龄加1</button>
+        </div>
     </div>
 </template>
 
-<style scoped>
-.xmtx {
-    background-color: #cbdcff;
-    color: #001643;
-    border-radius: 1rem;
-    padding: 1rem;
-    margin: 1rem;
-}
-
-.btn {
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: #0044cd;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0022a3;
-}
-
-.btn:first-of-type {
-    margin-left: 0;
-}
-</style>
+<style scoped></style>
