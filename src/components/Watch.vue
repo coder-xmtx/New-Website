@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 
+// --情况一：监视【ref】定义的【基本类型】数据--
 // 数据
 let sum = ref(0);
 
@@ -17,12 +18,40 @@ const stopWatch = watch(sum, (newValue, oldValue) => {
     }
 })
 
+// --情况二：监视【ref】定义的【对象类型】数据--
+// 数据
+let person = ref({
+    name: "xmtx",
+    age: 20
+});
+
+// 方法
+function changeAge() {
+    person.value.age++;
+}
+
+function changeName() {
+    person.value.name += "~";
+}
+
+function changePerson() {
+    person.value = {
+        name: "xmtx",
+        age: 20
+    }
+}
+
+// 监视
+watch(person, (newValue, oldValue) => {
+    console.log('person变化了', newValue, oldValue);
+}, { deep: true });
+
 </script>
 
 <template>
     <div class="flex flex-col bg-base-100 text-base-content m-2 p-2 rounded-box gap-2 font-bold">
         <div class="border-b" id="1">
-            <h2>情况一：监视【ref】定义的【基本类型】数据</h2>
+            <h2 class="text-xl">情况一：监视【ref】定义的【基本类型】数据</h2>
             <div class="flex gap-10 items-center">
                 总数：{{ sum }}
                 <button @click="changeSum"
@@ -30,7 +59,21 @@ const stopWatch = watch(sum, (newValue, oldValue) => {
                     总数加1</button>
             </div>
         </div>
-
+        <div class="border-b" id="2">
+            <h2 class="text-xl">情况二：监视【ref】定义的【对象类型】数据</h2>
+            <p>姓名：{{ person.name }} - 年龄：{{ person.age }}</p>
+            <div class="flex gap-3 items-center">
+                <button @click="changeName"
+                    class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                    姓名加~</button>
+                <button @click="changeAge"
+                    class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                    年龄加1</button>
+                <button @click="changePerson"
+                    class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                    重置</button>
+            </div>
+        </div>
     </div>
 </template>
 
