@@ -46,6 +46,51 @@ watch(person, (newValue, oldValue) => {
     console.log('person变化了', newValue, oldValue);
 }, { deep: true });
 
+// --情况三：监视【ref】定义的【对象类型】数据里的属性既有【基本类型】又有【对象类型】--
+// 数据
+let coder = ref({
+    name: "xmtx",
+    age: 20,
+    language: {
+        code1: "javascript",
+        code2: "python"
+    }
+})
+
+// 方法
+function changeCoderName() {
+    coder.value.name += "~";
+}
+
+function changeCoderAge() {
+    coder.value.age++;
+}
+
+function changeCoderLanguage1() {
+    coder.value.language.code1 = "golang";
+}
+
+function changeCoderLanguage2() {
+    coder.value.language.code2 = "C++";
+}
+
+function changeAllLanguage() {
+    coder.value.language = {
+        code1: "java",
+        code2: "C#"
+    }
+}
+
+// 监视基本类型
+watch(() => coder.value.name, (newValue, oldValue) => {
+    console.log('coder.name变化了', newValue, oldValue);
+}, { deep: true });
+
+// 监视对象类型
+watch(() => coder.value.language, (newValue, oldValue) => {
+    console.log('coder.language变化了', newValue, oldValue);
+}, { deep: true });
+
 </script>
 
 <template>
@@ -72,6 +117,28 @@ watch(person, (newValue, oldValue) => {
                 <button @click="changePerson"
                     class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
                     重置</button>
+            </div>
+        </div>
+        <div class="border-b" id="3">
+            <h2 class="text-xl">情况三：监视【ref】定义的【对象类型】数据里的属性既有【基本类型】又有【对象类型】</h2>
+            <p>姓名：{{ coder.name }} - 年龄：{{ coder.age }} </p>
+            <p>语言：{{ coder.language.code1 }} - {{ coder.language.code2 }}</p>
+            <div class="flex gap-3 items-center">
+                <button @click="changeCoderName"
+                    class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                    姓名加~</button>
+                <button @click="changeCoderAge"
+                    class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                    年龄加1</button>
+                <button @click="changeAllLanguage"
+                    class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                    修改所有语言</button>
+                <button @click="changeCoderLanguage1"
+                    class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                    语言1改成golang</button>
+                <button @click="changeCoderLanguage2"
+                    class="bg-neutral text-neutral-content rounded-field px-2 py-1 m-1 font-bold transition duration-500">
+                    语言2改成C++</button>
             </div>
         </div>
     </div>

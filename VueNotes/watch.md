@@ -93,3 +93,75 @@ watch(person, (newValue, oldValue) => {
 
 > [!Tip]
 > 这时候会发现，当点击“姓名加~”和“年龄加 1”的按钮时，控制台输出的`newValue`和`oldValue`的值是一样的，为什么会出现这样的情况？我们可以看到，`watch`监听的是对象的地址，当其中一个属性发生改变时，其地址还是没变的，所以新值和旧值就一样了。在实际开发中这个问题也不是很重要，因为一般我们都只写一个值`value`，不会管旧的。
+
+## 情况三：监视【ref】定义的【对象类型】数据里的属性既有【基本类型】又有【对象类型】
+
+这时候用`watch()`监听只能监听整个对象（开`deep:true`），其中某个属性发生变化了都会被监视<br />
+如果只想监视其中某个属性，需要将`watch()`第一个值改成`getter()`函数，通俗说就是`一个函数，返回该对象的某个属性`
+
+```Vue
+<script setup lang="ts">
+import { ref, watch } from 'vue';
+
+// --情况三：监视【ref】定义的【对象类型】数据里的属性既有【基本类型】又有【对象类型】--
+// 数据
+let coder = ref({
+    name: "xmtx",
+    age: 20,
+    language: {
+        code1: "javascript",
+        code2: "python"
+    }
+})
+
+// 方法
+function changeCoderName() {
+    coder.value.name += "~";
+}
+
+function changeCoderAge() {
+    coder.value.age++;
+}
+
+function changeCoderLanguage1() {
+    coder.value.language.code1 = "golang";
+}
+
+function changeCoderLanguage2() {
+    coder.value.language.code2 = "C++";
+}
+
+function changeAllLanguage() {
+    coder.value.language = {
+        code1: "java",
+        code2: "C#"
+    }
+}
+
+// 监视基本类型
+watch(() => coder.value.name, (newValue, oldValue) => {
+    console.log('coder.name变化了', newValue, oldValue);
+}, { deep: true });
+
+// 监视对象类型
+watch(() => coder.value.language, (newValue, oldValue) => {
+    console.log('coder.language变化了', newValue, oldValue);
+}, { deep: true });
+
+</script>
+
+<template>
+        <div class="border-b" id="3">
+            <h2>情况三：监视【ref】定义的【对象类型】数据里的属性既有【基本类型】又有【对象类型】</h2>
+            <p>姓名：{{ coder.name }} - 年龄：{{ coder.age }} </p>
+            <p>语言：{{ coder.language.code1 }} - {{ coder.language.code2 }}</p>
+            <div>
+                <button @click="changeCoderName">姓名加~</button>
+                <button @click="changeCoderAge">年龄加1</button>
+                <button @click="changeAllLanguage">修改所有语言</button>
+                <button @click="changeCoderLanguage1">语言1改成golang</button>
+                <button @click="changeCoderLanguage2">语言2改成C++</button>
+            </div>
+        </div>
+</template>
+```
