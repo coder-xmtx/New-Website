@@ -2,7 +2,9 @@
 import { computed, ref } from 'vue';
 let firstName = ref("张");
 let lastName = ref("三");
-let name = computed(() => firstName.value + " " + lastName.value);
+let name = computed(() => {
+    return firstName.value + " " + lastName.value
+});
 </script>
 
 <template>
@@ -14,6 +16,12 @@ let name = computed(() => firstName.value + " " + lastName.value);
         <div class="flex gap-2 items-center">
             请输入名：<input type="text" placeholder="名" v-model="lastName"
                 class="border-2 border-base-300 border-dashed rounded-field focus:outline-base-content p-1">
+        </div>
+        <div class="flex gap-2 items-center">
+            显示全名：{{ name }}
+        </div>
+        <div class="flex gap-2 items-center">
+            显示全名：{{ name }}
         </div>
         <div class="flex gap-2 items-center">
             显示全名：{{ name }}

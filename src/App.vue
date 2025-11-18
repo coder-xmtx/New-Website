@@ -2,12 +2,14 @@
 import Test from "./components/Test.vue";
 import Ref from "./components/Ref.vue";
 import Computed from "./components/Computed.vue";
+import Watch from "./components/Watch.vue";
 </script>
 
 <template>
   <Test />
   <Ref />
   <Computed />
+  <Watch />
 </template>
 
 <style></style>
