@@ -12,7 +12,7 @@ function changeSum() {
 
 // 监视:watch(要监视的对象,回调函数)
 const stopWatch = watch(sum, (newValue, oldValue) => {
-    console.log(newValue, oldValue);
+    console.log('【情况一】sum变化了', newValue, oldValue);
     if (newValue >= 5) {
         stopWatch(); // 停止监视
     }
@@ -43,7 +43,7 @@ function changePerson() {
 
 // 监视
 watch(person, (newValue, oldValue) => {
-    console.log('person变化了', newValue, oldValue);
+    console.log('【情况二】person变化了', newValue, oldValue);
 }, { deep: true });
 
 // --情况三：监视【ref】定义的【对象类型】数据里的属性既有【基本类型】又有【对象类型】--
@@ -83,12 +83,17 @@ function changeAllLanguage() {
 
 // 监视基本类型
 watch(() => coder.value.name, (newValue, oldValue) => {
-    console.log('coder.name变化了', newValue, oldValue);
+    console.log('【情况三】coder.name变化了', newValue, oldValue);
 }, { deep: true });
 
 // 监视对象类型
 watch(() => coder.value.language, (newValue, oldValue) => {
-    console.log('coder.language变化了', newValue, oldValue);
+    console.log('【情况三】coder.language变化了', newValue, oldValue);
+}, { deep: true });
+
+// 情况四：同时监视多个数据
+watch([() => coder.value.age, () => coder.value.language.code2], (newValue, oldValue) => {
+    console.log('【情况四】coder.age或coder.language.code2变化了', newValue, oldValue);
 }, { deep: true });
 
 </script>

@@ -165,3 +165,13 @@ watch(() => coder.value.language, (newValue, oldValue) => {
         </div>
 </template>
 ```
+
+## 情况四：同时监视多个数据
+
+直接在`watch()`第一个参数将想要监视的数据用数组进行包裹
+
+```JavaScript
+watch([() => coder.value.age, () => coder.value.language.code2], (newValue, oldValue) => {
+    console.log('coder.age或coder.language.code2变化了', newValue, oldValue);
+})
+```
