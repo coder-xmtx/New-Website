@@ -3,6 +3,7 @@ import Test from "./components/Test.vue";
 import Ref from "./components/Ref.vue";
 import Computed from "./components/Computed.vue";
 import Watch from "./components/Watch.vue";
+import WatchEffect from "./components/WatchEffect.vue";
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import Watch from "./components/Watch.vue";
   <Ref />
   <Computed />
   <Watch />
+  <WatchEffect />
 </template>
 
 <style></style>
