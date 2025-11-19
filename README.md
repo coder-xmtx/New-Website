@@ -3,13 +3,13 @@
 该仓库用来重构个人网站，目前本人还处于学习 Vue3 的阶段 <br />
 本网站的计划技术栈为 `Vue3` + `Pinia` + `TailwindCSS` + `VitePress` <br />
 尝试使用 `TypeScript` （相当于 `JavaScript` 的超集）<br />
-未来会考虑引入 `daisyUI` 组件库
+未来会考虑引入 `daisyUI` 组件库 或者 `shadcn-vue` 组件库
 
 ## ⚙️ 项目部署说明
 
 ### 1.安装相应 Node 依赖
 
-请确保电脑已安装 NodeJS（推荐安装 LTS 版本）<br />
+请确保电脑已安装 NodeJS（推荐安装 LTS 版本，版本号大于 18）<br />
 当然，用 NVM 来管理 NodeJS 版本也是个不错的选择
 
 ```sh
