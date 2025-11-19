@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import { useTemplateRef } from 'vue';
+import { ref, useTemplateRef } from 'vue';
 
 // 控制台输出h2
 const h2 = useTemplateRef("title2");
 const outputH2 = () => {
     console.log(h2.value);
 }
+
+const a = ref(1);
+const b = ref(2);
+const c = ref(3);
+
+defineExpose({ a, b, c });
 
 </script>
 
