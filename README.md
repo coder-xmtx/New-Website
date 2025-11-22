@@ -1,6 +1,6 @@
 # ✨ New-Website
 
-该仓库用来重构个人网站，目前本人还处于学习 Vue3 的阶段 <br />
+该仓库用来重构个人网站，目前处于学习 Vue3 的阶段 <br />
 本网站的计划技术栈为 `Vue3` + `Pinia` + `TailwindCSS` + `VitePress` <br />
 尝试使用 `TypeScript` （相当于 `JavaScript` 的超集）<br />
 未来会考虑引入 `daisyUI` 组件库 或者 `shadcn-vue` 组件库
@@ -26,9 +26,9 @@ npm run dev
 
 在终端里使用 `Ctrl + C`
 
-## 🛠️ 更新说明（2025-11-18）
+## 🛠️ 停更说明（2025-11-22）
 
-学习 `Vue3` 的 `watch()` 监听，开始使用 `tailwindCSS` 编写类
+一大堆数学专业课知识没学懂，期末考试要紧，还是要面对现实
 
 ## ✍️ 写在最后
 
