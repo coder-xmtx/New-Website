@@ -1,7 +1,15 @@
-import { readFile, writeFile, appendFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
-const data = await readFile("./data.json", "utf8");
-await writeFile("./data2.txt", "hello", "utf8");
-await appendFile("./data2.txt", " world", "utf8");
+const data = await readFile("./file/data.txt", "utf-8");
+const keychain = await readFile("./file/keychain.txt", "utf-8");
 
-console.log(data);
+const result = data
+  .split("")
+  .map((currentChar) => {
+    const charCode = currentChar.charCodeAt(0) - keychain;
+    return String.fromCharCode(charCode);
+  })
+  .join("");
+
+await writeFile("./file/decrypted.txt", result);
+console.log("done");
