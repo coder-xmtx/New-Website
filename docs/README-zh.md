@@ -1,10 +1,12 @@
-# <img src="../public/favicon.ico"> Miso Studio
+# <img src="../public/favicon.ico"> Mixso Studio
 
 [简体中文](../docs/README-zh.md) | [English](../docs/README-en.md)
 
 你好！我是小明同学
 
-欢迎来到我的个人网站 -- Miso Studio
+或者你可以叫我的英文名 Mixso
+
+欢迎来到我的个人网站 -- Mixso Studio
 
 ## 安装
 

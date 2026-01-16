@@ -1,10 +1,12 @@
-# <img src="./public/favicon.ico"> Miso Studio
+# <img src="./public/favicon.ico"> Mixso Studio
 
 [简体中文](./docs/README-zh.md) | [English](./docs/README-en.md)
 
 Hello, this is coder-xmtx.
 
-Welcome to my personal website -- Miso Studio.
+Or you can call me by my English name, Mixso.
+
+Welcome to my personal website -- Mixso Studio.
 
 ## Setup
 
