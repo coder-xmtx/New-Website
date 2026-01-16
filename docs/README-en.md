@@ -1,4 +1,6 @@
-# <img src="public\favicon.ico"> Miso Studio
+# <img src="../public/favicon.ico"> Miso Studio
+
+[简体中文](../docs/README-zh.md) | [English](../docs/README-en.md)
 
 Hello, this is coder-xmtx.
 
